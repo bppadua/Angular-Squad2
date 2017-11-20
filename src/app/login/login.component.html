@@ -1,24 +1,32 @@
 <div class="container">
 	<div class="example-container">
-
-		<mat-tab-group>
-					<mat-tab label="Login">		
-						<mat-form-field>
-							<input matInput placeholder="Input">
-						</mat-form-field>
-						<br/>
-						<mat-form-field>
-								<input matInput placeholder="Input">
-						</mat-form-field>
+		<mat-tab-group class="card">
+					<mat-tab label="Login">	
+						<div class="fields">
+							<mat-form-field style="width:300px !important">
+								<input matInput placeholder="Email">
+							</mat-form-field>
+							<br/>
+							<mat-form-field style="width:300px !important">
+								<input type="password" matInput placeholder="Senha">
+							</mat-form-field>
+						</div>
 					</mat-tab>
-					<mat-tab label="Register">						
-						<mat-form-field>
-							<input matInput placeholder="Input">
-						</mat-form-field>
-						<br/>						
-						<mat-form-field>
-								<input matInput placeholder="Input">
-						</mat-form-field>
+					<mat-tab label="Cadastro">
+						<div class="fields">
+							<mat-form-field style="width:300px !important">
+								<input matInput placeholder="Nome">
+							</mat-form-field>						
+							<mat-form-field style="width:300px !important">
+								<input matInput placeholder="Email">
+							</mat-form-field>
+							<mat-form-field style="width:300px !important">
+									<input type="password" matInput placeholder="Senha">
+							</mat-form-field>
+							<mat-form-field style="width:300px !important"> 
+									<input type="password" matInput placeholder="Confirmar Senha">
+							</mat-form-field>
+						</div>
 					</mat-tab>
 		</mat-tab-group>	
 	</div>
