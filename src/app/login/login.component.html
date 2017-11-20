@@ -1,3 +1,28 @@
 <div class="container">
-	<button mat-raised-button color="primary" (click)="login()">{{'Login' | translate}}</button>
+	<div class="example-container">
+
+		<mat-tab-group>
+					<mat-tab label="Login">		
+						<mat-form-field>
+							<input matInput placeholder="Input">
+						</mat-form-field>
+						<br/>
+						<mat-form-field>
+								<input matInput placeholder="Input">
+						</mat-form-field>
+					</mat-tab>
+					<mat-tab label="Register">						
+						<mat-form-field>
+							<input matInput placeholder="Input">
+						</mat-form-field>
+						<br/>						
+						<mat-form-field>
+								<input matInput placeholder="Input">
+						</mat-form-field>
+					</mat-tab>
+		</mat-tab-group>	
+	</div>
+	<!--<div>
+		<button mat-raised-button color="primary" (click)="login()">{{'Login' | translate}}</button>
+	</div>-->
 </div>
