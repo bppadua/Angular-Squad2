@@ -1,9 +1,9 @@
-<form>
-  <mat-form-field>
-      <input matInput placeholder="Nome da sala">
+<form #frmRoomRegister= "ngForm" (submit)="register($event)" class="form-container">
+  <mat-form-field class="full-width">
+      <input matInput name="txtName" placeholder="Nome da sala" [(ngModel)]="name" #roomName required>
   </mat-form-field>
-  <mat-form-field>
-      <textarea matInput placeholder="Descrição"></textarea>
+  <mat-form-field class="full-width">
+      <textarea name= "txtDescription" matInput placeholder="Descrição" [(ngModel)]="description" #roomDescription required></textarea>
   </mat-form-field>
-  <button mat-button>Criar</button>
+  <button mat-button type="submit" (disabled)="!txtName.invalid">Criar</button>
 </form>
