@@ -9,13 +9,13 @@ import { LoginAuthGuard } from './shared/services/auth/auth-login.guard';
 import { AppAuthGuard } from './shared/services/auth/auth-app.guard';
 import { RoomListComponent } from './rooms/room-list/room-list.component';
 import { RoomComponent } from './rooms/room/room.component';
-
+import{ QuestionListComponent} from './questions/question-list/question-list.component';
 const appRoutes: Routes = [
 	{ path: 'login', component: LoginComponent, canActivate: [LoginAuthGuard] },
 	
 	{ path: '', component: LayoutComponent, canActivate: [AppAuthGuard], children: [
 		{ path: 'users', component: UserListComponent },
-		{path:'room', component:LayoutComponent, children: [
+		{path:'room', component:QuestionListComponent, children: [
 			{path:'new', component:RoomComponent}
 		]}
 	] },
