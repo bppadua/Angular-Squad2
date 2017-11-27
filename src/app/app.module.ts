@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 
+
 import { SharedModule } from './shared/shared.module';
 import { UsersModule } from './users/users.module';
 
@@ -19,6 +20,7 @@ import { AppRouting } from './app.routing';
 
 import { LoginAuthGuard } from './shared/services/auth/auth-login.guard';
 import { HttpInterceptor } from './shared/services/http/http-interceptor.service';
+import { RoomsModule } from './rooms/rooms.module';
 
 export function HttpInterceptorFactory(backend: XHRBackend, options: RequestOptions, router: Router, injector: Injector) {
 	return new HttpInterceptor(backend, options, router, injector);
@@ -45,7 +47,8 @@ export function HttpLoaderFactory(http: HttpClient) {
 				useFactory: HttpLoaderFactory,
 				deps: [HttpClient]
 			}
-		})
+		}),
+		RoomsModule
 	],
 	declarations: [
 		AppComponent,
