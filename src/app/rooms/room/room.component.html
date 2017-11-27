@@ -5,5 +5,5 @@
   <mat-form-field class="full-width">
       <textarea name= "txtDescription" matInput placeholder="Descrição" [(ngModel)]="description" #roomDescription required></textarea>
   </mat-form-field>
-  <button mat-button type="submit" (disabled)="!txtName.invalid">Criar</button>
+  <button mat-button type="submit" [disabled]="txtName.invalid" class="full-width">Criar</button>
 </form>

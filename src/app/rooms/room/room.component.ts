@@ -15,11 +15,13 @@ export class RoomComponent implements OnInit {
 
   ngOnInit() {
   }
+  
   register(event){
     event.preventDefault();
     this.room.identifier = "1234";
     this.room.name = this.name;
     this.room.desc=this.description;
+    this.room.isActive = true;
     if(!localStorage.getItem("rooms")){
       localStorage.setItem("rooms","[]");
     }
