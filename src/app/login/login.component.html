@@ -3,35 +3,48 @@
 		<mat-tab-group class="card">
 					<mat-tab label="Login">	
 						<div class="fields">
-							<mat-form-field style="width:300px !important">
-								<input matInput placeholder="Email">
-							</mat-form-field>
+							<form (ngSubmit)="send($event)">
+								<mat-form-field style="width:300px !important">
+									<input matInput placeholder="Email" id="email" [(ngModel)]="userEmail" name="email" required>
+								</mat-form-field>
+								<mat-form-field style="width:300px !important">
+									<input type="password" matInput placeholder="Senha" id="password" [(ngModel)]="userPassword" name="password" required>
+								</mat-form-field>
+								<div>
+									<button style="width: 100%" mat-raised-button color="primary" (click)="login()">{{'Login' | translate}}</button>
+								</div>
+							</form>
 							<br/>
-							<mat-form-field style="width:300px !important">
-								<input type="password" matInput placeholder="Senha">
-							</mat-form-field>
-						</div>
-						<div style="padding:10% !important;">
-							<button style="width: 100%" mat-raised-button color="primary" (click)="login()">{{'Login' | translate}}</button>
+							<div>
+								<button style="width: 100%" mat-button color="primary" (click)="visitor()">{{'Entrar como visitante' | translate}}</button>
+							</div>
 						</div>
 					</mat-tab>
 					<mat-tab label="Cadastro">
 						<div class="fields">
-							<mat-form-field style="width:300px !important">
-								<input matInput placeholder="Nome">
-							</mat-form-field>						
-							<mat-form-field style="width:300px !important">
-								<input matInput placeholder="Email">
-							</mat-form-field>
-							<mat-form-field style="width:300px !important">
-									<input type="password" matInput placeholder="Senha">
-							</mat-form-field>
-							<mat-form-field style="width:300px !important"> 
-									<input type="password" matInput placeholder="Confirmar Senha">
-							</mat-form-field>
-						</div>
-						<div style="padding:0 10% 0 10% !important;">
-							<button style="width: 100%" mat-raised-button color="primary" (click)="login()">{{'Login' | translate}}</button>
+							<div class="alert alert-success" role="alert" *ngIf="sucess">
+								Cadastro realizado com sucesso!
+								<br />
+								<br />
+							</div>
+							<form (submit)="send($event)" ngNativeValidate>
+								<mat-form-field style="width:300px !important">
+									<input matInput placeholder="Nome" id="name" [(ngModel)]="user.name" name="name" required>
+								</mat-form-field>						
+								<mat-form-field style="width:300px !important">
+									<input matInput placeholder="Email" id="email" [(ngModel)]="user.email" name="email" required>
+								</mat-form-field>
+								<mat-form-field style="width:300px !important">
+									<input type="password" matInput placeholder="Senha" id="password" [(ngModel)]="user.password" name="password" required>
+								</mat-form-field>
+								<!--<mat-form-field style="width:300px !important"> 
+										<input type="password" matInput placeholder="Confirmar Senha" [(ngModel)]="user.password" name="password" required>
+								</mat-form-field>-->
+								<div>
+									<button style="width: 100%" mat-raised-button color="primary" type="submit">{{'Cadastrar' | translate}}</button>
+								</div>
+							</form>
+							<br/>
 						</div>
 					</mat-tab>
 		</mat-tab-group>	
