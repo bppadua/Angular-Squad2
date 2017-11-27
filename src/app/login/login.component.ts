@@ -33,15 +33,14 @@ export class LoginComponent implements OnInit {
 
 	login() {
 		debugger;
-		//console.log(localStorage.getItem('registerInfos'));
+		console.log(localStorage.getItem('registerInfos'));
 		var userData = JSON.parse(localStorage.getItem('registerInfos'));
 		if (this.userEmail == userData.email && this.userPassword == userData.password){
+			localStorage.setItem('currentUser', 'you');
 			this.router.navigate(['']);			
 		} else {
 			alert('Email e/ou senha incorretos');
 		}
-		//localStorage.setItem('currentUser', 'you'); 
-		//this.router.navigate(['']);
 	}
 
 	send(event): void {
