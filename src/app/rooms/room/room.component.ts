@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Room } from '../shared/room.model';
 import {MaterialModule} from '../../shared/material/material.module';
-import {Http,Headers} from '@angular/http';
+
 @Component({
   selector: 'app-room',
   templateUrl: './room.component.html',

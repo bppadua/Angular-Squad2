@@ -1,2 +1,10 @@
-
-<router-outlet></router-outlet>
+<mat-sidenav-container class="example-container">
+    <mat-sidenav #sideNav class="example-sidenav-content" position="end">
+        <router-outlet></router-outlet>
+    </mat-sidenav>
+    <div class="example-sidenav">
+        <button type="button" mat-button (click) = "sideNav.open()">
+            Open sidenav
+        </button>
+    </div>
+</mat-sidenav-container>
