@@ -11,7 +11,8 @@ import {
 	MatTabsModule,
 	MatListModule,
 	MatFormFieldModule,
-	MatInputModule
+	MatInputModule,
+	MatSidenavModule
 } from '@angular/material';
 
 @NgModule({
@@ -26,7 +27,8 @@ import {
 		MatTabsModule,
 		MatListModule,
 		MatFormFieldModule,
-		MatInputModule
+		MatInputModule, 
+		MatSidenavModule
 	],
 	exports: [
 		CommonModule,
@@ -39,7 +41,8 @@ import {
 		MatTabsModule,
 		MatListModule,
 		MatFormFieldModule,
-		MatInputModule
+		MatInputModule,
+		MatSidenavModule
 	]
 })
 export class MaterialModule { }

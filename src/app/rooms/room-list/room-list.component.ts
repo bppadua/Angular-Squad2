@@ -8,7 +8,7 @@ import { MaterialModule } from './../../shared/material/material.module';
 })
 export class RoomListComponent implements OnInit {
 
-  private rooms : Room[] = new Array<Room>(); 
+  public rooms : Room[] = new Array<Room>(); 
   private room : Room = new Room();
   constructor() { }
 
