@@ -1,16 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-
 import { DialogsService } from '../services/dialog/dialog.service';
-
 @Component({
 	selector: 'app-layout',
 	templateUrl: './layout.component.html',
 	styleUrls: ['./layout.component.css']
 })
 export class LayoutComponent implements OnInit {
-
+	
 	constructor(
 		private router: Router,
 		private dialogService: DialogsService,

@@ -1,3 +1,5 @@
-<p>
-  room-list works!
-</p>
+<div [ngClass]="{'large-form':mqAlias==='xs'||mqAlias==='sm','small-form':mqAlias==='md'||mqAlias==='lg'||mqAlias==='xl'}">
+  <mat-list>
+    <mat-list-item *ngFor="let r of this.rooms">{{r.name}}</mat-list-item>
+  </mat-list>
+</div>

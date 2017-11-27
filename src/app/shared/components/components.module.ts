@@ -18,4 +18,5 @@ import { MaterialModule } from '../material/material.module';
 		ConfirmDialogComponent
 	]
 })
-export class ComponentsModule { }
+export class ComponentsModule {
+ }
