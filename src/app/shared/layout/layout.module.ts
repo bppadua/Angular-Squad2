@@ -1,3 +1,4 @@
+import { RoomsModule } from './../../rooms/rooms.module';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
@@ -10,7 +11,8 @@ import { LayoutComponent } from './layout.component';
 	imports: [
 		MaterialModule,
 		RouterModule,
-		TranslateModule
+		TranslateModule,
+		RoomsModule
 	],
 	declarations: [
 		LayoutComponent

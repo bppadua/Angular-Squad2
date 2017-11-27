@@ -4,11 +4,13 @@ import { RoomListComponent } from './room-list/room-list.component';
 import { RoomComponent } from './room/room.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { MaterialModule } from '../shared/material/material.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   imports: [
-    CommonModule,ReactiveFormsModule, FormsModule, MaterialModule
+    CommonModule,ReactiveFormsModule, FormsModule, MaterialModule, FlexLayoutModule 
   ],
-  declarations: [RoomListComponent, RoomComponent]
+  declarations: [RoomListComponent, RoomComponent],
+  exports: [RoomListComponent]
 })
 export class RoomsModule { }

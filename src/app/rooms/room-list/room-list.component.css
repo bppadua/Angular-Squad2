@@ -1,0 +1,11 @@
+.small-form {
+    width: 38vw;    
+}
+
+.large-form {
+    width: 100vw;    
+}
+form  {
+    padding: 0px 16px;
+    height: 100%;
+}
