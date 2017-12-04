@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { AnswerListComponent } from './answer-list/answer-list.component';
+import { MaterialModule } from '../shared/material/material.module';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule, MaterialModule
   ],
-  declarations: []
+  declarations: [AnswerListComponent],
+  exports:[AnswerListComponent]
 })
 export class AnswersModule { }

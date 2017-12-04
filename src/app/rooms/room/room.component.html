@@ -1,4 +1,4 @@
-<form #frmRoomRegister= "ngForm" (submit)="register($event)" class="form-container">
+<form #frmRoomRegister= "ngForm" (submit)="register($event)" [ngClass]="{'large-form':mqAlias==='xs'||mqAlias==='sm','small-form':mqAlias==='md'||mqAlias==='lg'||mqAlias==='xl'}" class="form-container ">
   <mat-form-field class="full-width">
       <input matInput name="txtName" placeholder="Nome da sala" [(ngModel)]="name" #roomName required>
   </mat-form-field>
