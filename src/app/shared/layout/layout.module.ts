@@ -6,13 +6,15 @@ import { TranslateModule } from '@ngx-translate/core';
 import { MaterialModule } from '../material/material.module';
 
 import { LayoutComponent } from './layout.component';
+import { AnswersModule } from '../../answers/answers.module';
 
 @NgModule({
 	imports: [
 		MaterialModule,
 		RouterModule,
 		TranslateModule,
-		RoomsModule
+		RoomsModule,
+		AnswersModule
 	],
 	declarations: [
 		LayoutComponent

@@ -21,11 +21,12 @@ import { AppRouting } from './app.routing';
 import { LoginAuthGuard } from './shared/services/auth/auth-login.guard';
 import { HttpInterceptor } from './shared/services/http/http-interceptor.service';
 import { RoomsModule } from './rooms/rooms.module';
-import { QuestionsModule } from './questions/questions.module';
 import { AngularFireModule } from 'angularfire2';
 import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import{ QuestionsModule } from './questions/questions.module';
+import { AnswersModule } from './answers/answers.module';
 export function HttpInterceptorFactory(backend: XHRBackend, options: RequestOptions, router: Router, injector: Injector) {
 	return new HttpInterceptor(backend, options, router, injector);
 }
@@ -56,7 +57,8 @@ export function HttpLoaderFactory(http: HttpClient) {
 		QuestionsModule,
 		AngularFireModule.initializeApp(environment.firebase),
 		AngularFirestoreModule,
-		AngularFireAuthModule
+		AngularFireAuthModule,
+		AnswersModule
 	],
 	declarations: [
 		AppComponent,
