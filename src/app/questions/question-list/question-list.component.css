@@ -9,8 +9,8 @@
   .example-sidenav-content {
     display: flex;
     height: 100%;
-    align-items: center;
-    justify-content: center;
+    align-items: top;
+    justify-content:top;
   }
   
   .example-sidenav {
