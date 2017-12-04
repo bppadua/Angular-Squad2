@@ -1,9 +1,9 @@
-<md-card _ngcontent-c6="" class="mat-card">
-  <md-card-title-group _ngcontent-c6="" class="mat-card-title-group"><div><md-card-title _ngcontent-c6="" class="mat-card-title ">Card with title</md-card-title><md-card-subtitle _ngcontent-c6="" class="mat-card-subtitle ">Subtitle</md-card-subtitle></div><img _ngcontent-c6="" class="mat-card-md-image" md-card-md-image="">
-    <div>
-      <md-card-title _ngcontent-c6="" class="mat-card-title ">Card with title</md-card-title>
-      <md-card-subtitle _ngcontent-c6="" class="mat-card-subtitle ">Subtitle</md-card-subtitle>
-    </div>    
-    <img _ngcontent-c6="" class="mat-card-md-image" md-card-md-image="">   
-  </md-card-title-group>
-</md-card>
+<form #frmRoomRegister= "ngForm" (submit)="register($event)" class="form-container">
+    <mat-form-field class="full-width">
+        <input matInput name="txtName" placeholder="Título da Pergunta" [(ngModel)]="name" #roomName required>
+    </mat-form-field>
+    <mat-form-field class="full-width">
+        <textarea name= "txtDescription" matInput placeholder="Descrição" [(ngModel)]="description" #roomDescription required></textarea>
+    </mat-form-field>
+    <button mat-button type="submit"  class="full-width">Criar</button>
+  </form>
