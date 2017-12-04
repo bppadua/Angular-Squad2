@@ -17,13 +17,9 @@
 
 </mat-toolbar>
 <mat-sidenav-container class="example-container">
-	<mat-sidenav #sidenav opened="true" disableClose="true" class="example-sidenav">
+	<mat-sidenav #sidenav opened="true"  mode="side">
 		<app-room-list></app-room-list>
 	</mat-sidenav>
-	
-	<div class="example-sidenav-content">
 		<router-outlet></router-outlet>
-	</div>
-  
 </mat-sidenav-container>
   
