@@ -32,7 +32,6 @@ export class LoginComponent implements OnInit {
 	}
 
 	login() {
-		debugger;
 		console.log(localStorage.getItem('registerInfos'));
 		var userData = JSON.parse(localStorage.getItem('registerInfos'));
 		if (this.userEmail == userData.email && this.userPassword == userData.password){
