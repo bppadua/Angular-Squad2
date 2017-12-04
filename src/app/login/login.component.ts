@@ -1,3 +1,4 @@
+import { UsersService } from './../users/shared/users.service';
 import { User } from './../users/shared/user.model';
 import { Component, OnInit, Inject } from '@angular/core';
 import { Router } from '@angular/router';
@@ -24,7 +25,8 @@ export class LoginComponent implements OnInit {
 		public dialog: MatDialog,
 		private router: Router,
 		private translate: TranslateService,
-		private app: AppComponent
+		private app: AppComponent,
+		private userService: UsersService
 	) { }
 
 	ngOnInit() {
@@ -32,20 +34,35 @@ export class LoginComponent implements OnInit {
 	}
 
 	login() {
-		debugger;
-		console.log(localStorage.getItem('registerInfos'));
-		var userData = JSON.parse(localStorage.getItem('registerInfos'));
-		if (this.userEmail == userData.email && this.userPassword == userData.password){
-			localStorage.setItem('currentUser', 'you');
-			this.router.navigate(['']);			
-		} else {
-			alert('Email e/ou senha incorretos');
-		}
+		this.userService.doLogin(this.user.email, this.user.password)
+		.then(rs => {
+			localStorage.setItem('currentUser', rs.uid);
+			localStorage.setItem('isAnonymous', 'false');
+			this.router.navigateByUrl(`/room`);
+		})
+		.catch(error => {
+			console.log(error.message, 1500);
+		});
 	}
+
+	addNewUser() {
+		this.userService.doSignUp(this.user.email, this.user.password)
+		.then(rs =>{
+			localStorage.setItem('currentUser', rs.uid);
+			localStorage.setItem('isAnonymous', 'false');
+			this.userService.doUpdateOnSignUp(this.user.name);
+			this.sucess = true;
+			this.router.navigateByUrl(`/room`);
+		})
+		.catch(error => {
+			console.log(error.message, 1500);
+		});
+	}
+
 
 	send(event): void {
 		event.preventDefault();
-		this.sucess = true;
+		this.addNewUser();
 	}
 
 	sendLogin(event): void{

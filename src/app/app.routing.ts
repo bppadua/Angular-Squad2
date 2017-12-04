@@ -16,6 +16,7 @@ const appRoutes: Routes = [
 	{ path: '', component: LayoutComponent, canActivate: [AppAuthGuard], children: [
 		{ path: 'users', component: UserListComponent },
 		{path:'room', component:QuestionListComponent, children: [
+			{path:':identifier', component:RoomComponent},
 			{path:'new', component:RoomComponent}
 		]}
 	] },
