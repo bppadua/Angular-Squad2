@@ -22,6 +22,7 @@ import { LoginAuthGuard } from './shared/services/auth/auth-login.guard';
 import { HttpInterceptor } from './shared/services/http/http-interceptor.service';
 import { RoomsModule } from './rooms/rooms.module';
 import{QuestionsModule} from './questions/questions.module';
+import { AnswersModule } from './answers/answers.module';
 export function HttpInterceptorFactory(backend: XHRBackend, options: RequestOptions, router: Router, injector: Injector) {
 	return new HttpInterceptor(backend, options, router, injector);
 }
@@ -49,7 +50,8 @@ export function HttpLoaderFactory(http: HttpClient) {
 			}
 		}),
 		RoomsModule,
-		QuestionsModule
+		QuestionsModule,
+		AnswersModule
 	],
 	declarations: [
 		AppComponent,
