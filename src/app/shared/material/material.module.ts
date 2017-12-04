@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import {
 	MatIconModule,
 	MatButtonModule,
@@ -12,7 +11,7 @@ import {
 	MatListModule,
 	MatFormFieldModule,
 	MatInputModule,
-	MatSidenavModule
+	MatSidenavModule, 
 } from '@angular/material';
 
 @NgModule({
